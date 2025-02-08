@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PDF trainers contract</title>
+        <link rel="stylesheet" href="css/trainers-contract-automatische-factuur.css">
+        <script src="js/trainers-contract-automatische-factuur.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Word and Excel Processor To PDF</h1>
+            
+            <label for="file-type">Select File Type:</label>
+            <select id="file-type">
+                <option value="" disabled selected>Select a file type</option>
+                <option value="invoice">Invoice</option>
+                <option value="contract">Contract</option>
+            </select>
+            
+            <form id="upload-form">
+                <label for="pdf-file">File Template (automatic):</label>
+                <div id="template-info"></div>
+                
+                <label for="excel-file">Upload Excel File:</label>
+                <input type="file" id="excel-file" accept=".xlsx, .xls" required>
+                
+                <button type="submit">Process Files</button>
+            </form>
+            <div id="output"></div>
+        </div>
+    </body>
+</html>
