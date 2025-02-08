@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let templatePath = '';
 
         if (selectedType === 'invoice') {
-            templatePath = '../File Templates/voorbeeld-factuur.docx';
+            templatePath = 'File Templates/voorbeeld-factuur.docx';
             console.log("Invoice")
         } else if (selectedType === 'contract') {
-            templatePath = '../File Templates/voorbeeld-contract-trainers.docx';
+            templatePath = 'File Templates/voorbeeld-contract-trainers.docx';
             console.log("Contract")
         }
         
