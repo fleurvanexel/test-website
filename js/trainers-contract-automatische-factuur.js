@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const fileTypeSelect = document.getElementById('file-type');
     const templateInfoDiv = document.getElementById('template-info');
+    const uploadForm = document.getElementById('upload-form');
 
     fileTypeSelect.addEventListener('change', () => {
         const selectedType = fileTypeSelect.value;
@@ -23,6 +24,28 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error('Error loading template:', error));
 
  
+    });
+
+    uploadForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const pdfFile = document.getElementById('pdf-file').files[0];
+        // const excelFile = document.getElementById('excel-file').files[0];
+
+        // if (pdfFile && excelFile) {
+            // Process the files (this is where you would add your processing logic)
+            // For demonstration, we'll just download the PDF template
+
+            const fileURL = URL.createObjectURL(pdfFile);
+            const a = document.createElement('a');
+            a.href = fileURL;
+            a.download = pdfFile.name;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        // } else {
+        //     console.error('Both PDF and Excel files are required.');
+        // }
     });
 });
 
