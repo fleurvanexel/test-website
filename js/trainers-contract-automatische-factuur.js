@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let templatePath = '';
 
         if (selectedType === 'invoice') {
-            templatePath = 'test-website/File Templates/voorbeeld-factuur.docx';
-            console.log("Invoice2")
+            templatePath = 'File Templates/voorbeeld-factuur.docx';
+            console.log("Invoice")
         } else if (selectedType === 'contract') {
-            templatePath = 'test-website/File Templates/voorbeeld-contract-trainers.docx';
-            console.log("Contract2")
+            templatePath = 'File Templates/voorbeeld-contract-trainers.docx';
+            console.log("Contract")
         }
         
         console.log("Try to fetch", templatePath)
