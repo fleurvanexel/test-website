@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fileTypeSelect = document.getElementById('file-type');
     const templateInfoDiv = document.getElementById('template-info');
     const uploadForm = document.getElementById('upload-form');
+    const pdfFileInput = document.getElementById('pdf-file');
 
     fileTypeSelect.addEventListener('change', () => {
         const selectedType = fileTypeSelect.value;
@@ -9,10 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (selectedType === 'invoice') {
             templatePath = '../File Templates/voorbeeld-factuur.docx';
+            console.log("Invoice")
         } else if (selectedType === 'contract') {
             templatePath = '../File Templates/voorbeeld-contract-trainers.docx';
+            console.log("Contract")
         }
-
+        
+        console.log("Try to fetch", templatePath)
         fetch(templatePath)
             .then(response => response.blob())
             .then(blob => {
